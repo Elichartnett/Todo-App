@@ -30,6 +30,7 @@ struct TaskDetailView: View {
             
             Button {
                 context.delete(task)
+                try! context.save()
                 detailTaskSelection = nil
             } label: {
                 Text("Delete")
