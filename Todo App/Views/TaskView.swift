@@ -14,17 +14,17 @@ struct TaskView: View {
     @Binding var info: String
     
     var body: some View {
-        VStack {
+        Form {
+            Section {
+                TextField("Title", text: $title, prompt: Text("Title"))
+            }
             
-            Text("Title")
-                .bold()
-            TextField("Title", text: $title, prompt: Text("Title"))
-            
-            Text("Description:")
-                .bold()
-            TextEditor(text: $info)
+            Section {
+                Text("Description:")
+                    .bold()
+                TextEditor(text: $info)
+            }
         }
-        .padding(.horizontal)
     }
 }
 
